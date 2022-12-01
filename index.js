@@ -22,7 +22,6 @@ if (process.argv[2] === 'read') {
     }
   });
   } else if (process.argv[2] === 'delete') {
-    if (process.argv[3] === data.nextId) {
-      delete(data.nextId);
-    }
-  }
+    const input = process.argv[3].toString();
+    delete data.notes[input];
+}
