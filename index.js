@@ -1,7 +1,7 @@
 const fs = require('fs');
 const data = require('./data.json');
 const notes = data['notes'];
-// let nextId = data['nextId'];
+let nextId = data['nextId'];
 const input = process.argv[3];
 
 
@@ -12,6 +12,8 @@ if (process.argv[2] === 'read') {
     }
   })
   } else if (process.argv[2] === 'add') {
+  data.notes[nextId] = input;
+  data.nextId++;
   fs.writeFile('data.json', JSON.stringify(process.argv[3], null, 2), 'utf8', (err) =>  {
     if (err) {
       console.error(err);
