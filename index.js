@@ -8,7 +8,7 @@ fs.readFile('data.json', 'utf8', (err, data) => {
     process.exit(1);
   } else {
     for (var property in notes) {
-    console.log(notes[property]);
+    console.log(`${property}` + ': ' + notes[property]);
     }
   }
 })
